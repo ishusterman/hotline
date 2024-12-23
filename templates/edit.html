@@ -1,0 +1,118 @@
+{% load staticfiles %}
+{% load i18n static %}
+<!DOCTYPE html>
+<html>
+<title>Обращение на горячую линию ГБУЗ Республиканская клиническая больница им.Г.Г.Куватова</title>
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/base.css" %}"/>
+
+
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" />
+
+
+<script type="text/javascript" src="/jsi18n/"></script>
+<link href="/static/select2/css/select2.css" type="text/css" media="all" rel="stylesheet" />
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.js"></script>
+<script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+<script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+<script type="text/javascript" src="/static/admin/js/calendar.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
+<script type="text/javascript" src="/static/select2/js/select2.jquery_ready.js"></script>
+<script type="text/javascript" src="/static/select2/js/select2.jquery_ui_sortable.js"></script>
+<script type="text/javascript" src="/static/select2/js/select2.js"></script>
+<script type="text/javascript" src="/static/admin/js/collapse.js"></script>
+<script type="text/javascript" src="/static/admin/js/inlines.js"></script>
+
+     <link rel="stylesheet" href="/static/style_aware.css">
+
+    <script type="text/javascript">
+  function showOrHide(cb, cat) {
+    cb = document.getElementById(cb);
+    cat = document.getElementById(cat);
+    if (cb.checked) cat.style.display = "block";
+    else cat.style.display = "none";
+  }
+    </script>
+
+
+
+</head>
+
+<body>
+ <div id="header">
+        <div id="branding">
+        {% block branding %}<h1 ><a>Обращение на горячую линию ГБУЗ Республиканская клиническая больница им.Г.Г.Куватова</a></h1>{% endblock %}
+        </div>
+    </div>
+    <!-- END Header -->
+    {% block breadcrumbs %}
+    <div class="breadcrumbs">
+    </div>
+    {% endblock %}
+
+    <form method="post" action="/request/save/">
+
+        {% csrf_token %}
+
+        {{ item.non_field_errors }}
+        <input hidden name="id" type="text" size="5" value="{{ id}}">
+
+        <a>Дата:</a> {{ item.request_date }} </br>
+
+
+        <a>Номер:</a> <input type="text" name="number"  value="{{ number}}" required>
+
+          <fieldset class="module aligned ">
+            <h2>Обратившийся</h2>
+
+        <a>Фамилия:</a> {{ item.request_f }}
+        <a>Имя:</a> {{ item.request_i }}
+              <a>Отчество:</a> {{ item.request_o }} </br>
+
+              <a>Обращение по поводу себя (да/нет):</a> {{ item.request_s }}
+          </fieldset>
+
+
+
+        <fieldset class="module aligned ">
+
+            <h2>Пациент</h2>
+        <a>Фамилия:</a> {{ item.patient_f}}
+        <a>Имя:</a> {{ item.patient_i }}
+        <a>Отчество:</a> {{ item.patient_o }} </br>
+        <a>Дата рождения:</a> {{ item.patient_date}} </br>
+        <a>Место работы:</a> {{ item.patient_work }}
+        <a>Должность:</a> {{ item.patient_position }} </br>
+        <a>Адрес:</a> {{ item.patient_address}}
+        <a>Номер телефона:</a> {{ item.patient_phone}} </br>
+        </fieldset>
+
+        <a>К какому медиц.орган. жалоба:</a> {{ item.clinic }} </br>
+        <a>Вопрос:</a> {{ item.question }} </br>
+        <a>Результат:</a> {{ item.result}}
+        <a>Кто принял:</a> {{ item.who_take }} </br>
+        <a>По детям/по взрослым:</a> {{ item.age }}
+        <a>Код классификатора:</a> {{ item.type_request}} </br>
+
+        <a>Решено положительно:</a> {{ item.resolved}}
+        <a>Даны комментарии:</a> {{ item.comment1 }} </br>
+
+        <input type="submit" value="К списку" name="action"/>
+        <input type="submit" value="Сохранить" name="action"/>
+
+    </form>
+
+    </body>
+
+</html>
+
+
