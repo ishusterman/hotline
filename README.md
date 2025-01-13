@@ -4,7 +4,7 @@ This program is designed to automate the tracking and management of inquiries ma
 
 ## Features
 
-- **Create New Inquiry**: Allows you to log a new inquiry, capturing details such as the callerís information, inquiry type, and urgency.
+- **Create New Inquiry**: Allows you to log a new inquiry, capturing details such as the caller‚Äôs information, inquiry type, and urgency.
 - **Track Inquiry Status**: The program tracks the status of each inquiry (e.g., pending, resolved, escalated).
 - **Search Inquiries**: Enables searching inquiries by various criteria, such as caller name, inquiry type, or status.
 - **Categorize Inquiries**: Sort inquiries into categories based on the issue type (e.g., technical support, billing, general questions).
@@ -13,8 +13,8 @@ This program is designed to automate the tracking and management of inquiries ma
 ## Usage
 
 1. Launch the program.
-2. To log a new inquiry, click the ìNew Inquiryî button and enter the callerís information, inquiry details, and urgency level.
-3. Track the status of each inquiry by updating its status (e.g., ìpending,î ìresolvedî).
+2. To log a new inquiry, click the ‚ÄúNew Inquiry‚Äù button and enter the caller‚Äôs information, inquiry details, and urgency level.
+3. Track the status of each inquiry by updating its status (e.g., ‚Äúpending,‚Äù ‚Äúresolved‚Äù).
 4. Use the search function to filter inquiries based on specific criteria (e.g., caller name, inquiry type, or status).
 5. Generate reports to analyze the number of inquiries, response times, and the rate of issue resolution.
 
@@ -28,11 +28,6 @@ An inquiry consists of the following information:
 - **Date & Time**: When the inquiry was made.
 - **Status**: The current status of the inquiry (e.g., pending, resolved, escalated).
 - **Priority**: The urgency level of the inquiry (e.g., low, medium, high).
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-category of the inquiry (e.g., technical support, billing, general).
 - **Date & Time**: When the inquiry was made.
 - **Status**: The current status of the inquiry (e.g., pending, resolved, escalated).
 - **Priority**: The urgency level of the inquiry (e.g., low, medium, high).
